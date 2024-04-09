@@ -1,8 +1,12 @@
 # Centos-Setup
 
-* Create new virtual machine in VirtualBox *
+### Create new virtual machine in VirtualBox
 
 - add second network adapter
 
-* CMD Setup *
+### CMD Setup
 - history
+```
+pwd
+
+```
