@@ -37,6 +37,7 @@ df -h
 fdisk -l
 parted -l
 lsblk
+lsblk -o NAME,HCTL,SIZE,MOUNTPOINT,TYPE
 ```
 5. Add volume
 ```
@@ -52,6 +53,12 @@ mkfs.ext4 /dev/sdb1
 cd /
 mkdir /data
 mount /dev/sdb1 /data
+vi /etc/fstab
+    /dev/sdb1 /data ext4 defaults 1 2
+umount /data
+mount -a
+
+
 ```
 
 ### CMD Setup
