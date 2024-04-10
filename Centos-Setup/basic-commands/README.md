@@ -36,14 +36,33 @@ passwd userid
 ```
 touch test.txt
 touch test1.txt test2.txt test3.txt 
+```
+### Copy files / directories
+```
 cp source.txt dest.txt
+cp -R source_dir dest_dir
+```
+### Edit files
+```
 vi test.txt
     / - find in text
     w - write
     q - quite
     i - insert
-
 ```
+### Find files
+```
+find / -name "*ala*" 
+locate + updatedb   ... - find based on local database and cashe 
+```
+\* - zero or more chars  <br>
+? - single char  <br>
+[] - range of chars  <br>
+\\ - as an escape character <br>
+^ - the begining of line <br>
+$ - the end of the line <br>
+
+touch abcd{1..9}.txt - will create 9 files
 
 ### Creating Directories
 ```
