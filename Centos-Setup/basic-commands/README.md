@@ -99,8 +99,13 @@ sudo useradd -m -G group_name username    # Create user
 sudo passwd username                      # Set password for user
 visudo                                    # Add user to sudo group
 
+sudo chgrp [options] new_group file       # change group ownership of files
 ```
-
+### Save text to file
+```
+echo "test text" > my_file_1.txt   # Override file 
+echo "test text" >> my_file_1.txt   # Append text to file
+```
 
 
 
