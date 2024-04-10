@@ -42,5 +42,15 @@ l - link <br/>
 Month | Day | Time -> creation time
 
 
-
+### Absolute vs Relative Path
+Absolute Path:
+```
+cd /var/log/samba
+```
+Relative Path:
+```
+cd /var
+cd log
+cd samba
+```
 
