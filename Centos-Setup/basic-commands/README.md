@@ -90,7 +90,16 @@ ln original_file link_name       # Create hard link
                                  # // like creating a copy of file
 ```
 
+### Create group and user
+```
+sudo groupadd group_name                  # Create group
+sudo useradd -m -G group_name username    # Create user
+                                          # -m - create home dir
+                                          # -G add to group
+sudo passwd username                      # Set password for user
+visudo                                    # Add user to sudo group
 
+```
 
 
 
