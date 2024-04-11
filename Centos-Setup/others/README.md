@@ -91,5 +91,27 @@ head
 tail
 ```
 
+### truncate - cut content of file 
+```
+cat f1.txt
+        ala
+        kot
+        pies
+        kot
+truncate -s 10 f1.txt
+cat f1.txt
+        ala
+        kot
+        pi
+```
 
+# combining files
+```
+cat file1 file2 file3 > file4
+```
 
+# spliting file
+```
+split -l 300 file.txt childfile
+        -l  - split file into 300 lines per file to childfileaa, childfileab
+```
