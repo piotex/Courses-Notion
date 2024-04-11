@@ -27,7 +27,7 @@ sudo date -s $(curl -s "http://worldtimeapi.org/api/timezone/Europe/Warsaw" | gr
     Trying 93.184.216.34...
     Connected to example.com.
     Escape character is '^]'.
-    
+
         GET / HTTP/1.1
         Host: example.com
         ^
@@ -53,3 +53,43 @@ sudo date -s $(curl -s "http://worldtimeapi.org/api/timezone/Europe/Warsaw" | gr
     Connection closed by foreign host.
 
 ```
+
+### see output and save to file - tee
+```
+ifconfig | tee ifconfig.txt
+ifconfig | tee -a ifconfig.txt   # append
+
+```
+
+### calculate number of chars in text
+```
+wc -c ifconfig.txt
+```
+### calculate number of lines in text
+```
+wc -l ifconfig.txt
+```
+### pipes - combining commands
+```
+ls -al /etc | more
+ls -la | tail -n 5
+```
+### copy files
+```
+cp source destination
+cp -p source dest          # copy with permitions
+
+scp /tmp/file.txt user@host:/tmp/directory
+```
+### display file 
+```
+cat
+more
+less
+
+head
+tail
+```
+
+
+
