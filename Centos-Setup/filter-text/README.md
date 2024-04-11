@@ -52,7 +52,22 @@ cat lahrt.txt | sort -k2 | awk '{print $2}'
 ### uniq - filter out repeted or duplicate lines
 ```
 cat lahrt.txt |  awk '{print $3}' | uniq
+    -c  - count how many repetitions
+    -d  - show only repeted lines
 ```
 
+# wc - word count
+```
+cat lahrt.txt |  wc
+    -l  - return only number of lines
+    -c  - return only number of cahrs / bytes
+    -w  - return only number of words
+```
+<br>
 
-
+```
+echo "ala ma kota" | wc
+```
+|lines|words|bytes|
+|-|-|-|
+|1|3|12|
