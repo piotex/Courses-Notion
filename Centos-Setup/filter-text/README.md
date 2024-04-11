@@ -25,10 +25,34 @@ ll | awk '{if($9 == "error.txt") print $0;}'    # print line with error.txt as f
 
 ```
 
+### grep - filter
+```
+grep keyword file
+cat lahrt.txt | grep X
+    -c  - search for key and count
+    -i  - search for key and ignore case-sensitive
+    -n  - display mached lines and their line number
+    -v  - display everything but keyword
+```
 
+### egrep - search for 2 keywords or more
+```
+cat lahrt.txt | egrep -i " 8|my"
+cat lahrt.txt | egrep -i " 8 | 9 | 6 "
+```
 
+### sort - sort in alphabetic order
+```
+cat lahrt.txt | sort 
+    -r   - reverse order
+    -k2  - sort by 2 word
+cat lahrt.txt | sort -k2 | awk '{print $2}'
+```
 
-
+### uniq - filter out repeted or duplicate lines
+```
+cat lahrt.txt |  awk '{print $3}' | uniq
+```
 
 
 
