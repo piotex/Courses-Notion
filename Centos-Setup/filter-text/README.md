@@ -56,7 +56,7 @@ cat lahrt.txt |  awk '{print $3}' | uniq
     -d  - show only repeted lines
 ```
 
-# wc - word count
+### wc - word count
 ```
 cat lahrt.txt |  wc
     -l  - return only number of lines
