@@ -7,3 +7,5 @@
 | [Esc] | Escape insert mode |
 | :wq | Write and quit |
 | q! | Force quit |
+|[Esc] d d| Remove line|
+| [Alt] u | undo changes (Ctrl+Z) |
