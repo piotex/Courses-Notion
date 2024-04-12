@@ -112,6 +112,25 @@ ls -lahrt > lahrt.txt
 cat my_file_1.txt 
 ```
 
+### sed - replace text with text in file
+```
+sed -i 's/kot/kooooot/g' f2.txt 
+    -i  - insert changes to file (without - will print to console) 
+    s   - substitute
+    g   - global // more that one place
+
+
+sed -i 's/kot//g' f2.txt    -> will remove 'kot' from file
+
+sed -i '/kot/d' f2.txt      -> will remove whole line that contains 'kot'
+
+sed -i '/^$/d' f2.txt       -> will remove empty lines from file
+
+sed -i '1d' f2.txt          -> will remove first line from file
+sed -i '1,2d' f2.txt        -> will remove first two lines from file
+
+sed -i 's/\t/ /g' f2.txt   -> replace TAB with SPACE
+```
 
 
 
