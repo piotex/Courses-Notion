@@ -67,3 +67,15 @@ sudo yum check-update
 sudo yum update -y
 sudo reboot
 ```
+
+### User management
+```
+sudo useradd -m -G technical_users docker
+sudo passwd docker
+chown docker:technical_users /data/
+
+visudo
+    peter    ALL=(ALL)       ALL
+
+
+```
