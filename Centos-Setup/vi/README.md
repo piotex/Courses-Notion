@@ -9,3 +9,4 @@
 | q! | Force quit |
 |[Esc] d d| Remove line|
 | [Alt] u | undo changes (Ctrl+Z) |
+| [Esc] :%s/origin/changed/ | replace all "origin" with "changed" in text
