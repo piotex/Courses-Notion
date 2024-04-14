@@ -21,7 +21,7 @@ for tmp_folder in my_folders:
 
 
 case_sensitive = False
-text_to_find = "Tar"
+text_to_find = "awk"
 
 for tmp_file in my_files:
     with open(tmp_file, 'r') as file:
