@@ -115,3 +115,18 @@ cat file1 file2 file3 > file4
 split -l 300 file.txt childfile
         -l  - split file into 300 lines per file to childfileaa, childfileab
 ```
+### changeing system hostname
+```
+hostname
+hostnamectl set-hostname newhostname
+
+Version 7       - edit /etc/hostname
+Version 6       - edit /etc/sysconfig/network
+```
+### finding-system-informaiton
+```
+cat /etc/redhat-release
+uname -a
+dmidecode               -> some info with bios
+arch                    -> system architecture - x86_64 or 32
+```
