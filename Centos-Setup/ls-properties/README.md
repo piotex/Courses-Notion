@@ -8,6 +8,19 @@
 | drwxr-xr-x. |   2 | root | root|     6 | Aug|   9|   2021 | srv                |
 | lrwxrwxrwx. |   1 | root | root|     8 | Aug|   9|   2021 | sbin -> usr/sbin   |
 
+### Permissions
+
+| - | rwx | rwx | rwx |
+|---|-----|-----|-----|
+| file/type | users | groups | others |
+
+<br> 
+
+**sticky** bit - last bit (for example in -rwxrwxrwt it is 't' and in this case it prevent from deleting this directory)
+
+```
+chmod +t /my/dir
+```
 
 ### Permisions
 
@@ -23,6 +36,7 @@
 chown user:group file_or_dir
 chmod 777 file_or_dir 
 ```
+
 
 |  |  |  |
 |-----|-----|-----|
@@ -48,3 +62,7 @@ cd log
 cd samba
 ```
 
+### Change user attributes
+```
+usermod
+```

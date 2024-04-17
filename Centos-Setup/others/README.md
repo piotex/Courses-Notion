@@ -166,3 +166,9 @@ vi .bashrc
 TEST='123'
 export TEST
 ```
+set global env permanently
+```
+vi /etc/profile   or   /etc/bashrc
+TEST='123'
+export TEST
+```
