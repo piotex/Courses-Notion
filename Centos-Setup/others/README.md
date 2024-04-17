@@ -184,6 +184,15 @@ echo $0   -> find what shell you use
 find . -type f -atime +300 -delete
 ```
 
+### scp from host
+```
+scp peter@host_ip.com:/home/peret/log.tar.gz .
+```
+
+### get moba location
+```
+open /home/mobaxterm
+```
 
 
 
