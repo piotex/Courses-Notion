@@ -144,11 +144,25 @@ script file_name        -> will record all what I execute and it's output
         line with: linux16 /vim... root=/dev... ro ...
         remove ro and type .... some text...? [in Centos 9 go to end of the line and after 'rhgb quiet' type 'rd.break' and press [Ctrl] X ]
 3. change password
+        chroot /sysroot
+        touch /.autorelabel
 4. reboot
 ```
+### sos-report   -> it will send files to RedHat for help with your host - for support
+### Environment-variables
+print env var
 ```
-
+printenv OR env
+print $ONE_VARIABLE
 ```
+set env var
 ```
-
+export TEST=1
+echo $TEST
+```
+set permanently
+```
+vi .bashrc
+TEST='123'
+export TEST
 ```
