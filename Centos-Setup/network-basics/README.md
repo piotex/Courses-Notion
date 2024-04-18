@@ -36,14 +36,12 @@ virb0 = Virtual Bridge 0 - is used for NAT (Network Address Translation) - to co
 
 ```
 ethtool enp0s3
-
-
-
-
 ```
 
+### NIC Bonding Procedure - for redundancy (in case if one network addapred dies) and higher spead (1G + 1G = 2G)
+```
 
-
+```
 
 
 
