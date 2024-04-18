@@ -14,6 +14,13 @@
 5. Root Password
 6. User Creation
 
+### Update
+```
+sudo yum check-update
+sudo yum update -y
+sudo reboot
+```
+
 ### Static Ip Address
 1. Turn machine off
 2. Settings -> Network -> Adapter 2: Host-only
@@ -25,6 +32,59 @@ Device: Network adapter e.g.: enp0s8 (08:00:27:99:3C:43)
 Address: 192.168.56.59 <br/>
 Gateway: 255.255.255.0 <br/>
 Save <br/>
+
+
+### User management
+```
+sudo useradd -m -G technical_users docker
+sudo passwd docker
+chown docker:technical_users /data/
+
+visudo
+    peter    ALL=(ALL)       ALL
+
+
+```
+
+### Install kubernetess
+```
+[ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.22.0/kind-linux-amd64
+chmod +x ./kind
+sudo mv ./kind /usr/bin
+
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+mv  /usr/local/bin/kubectl  /usr/bin
+kubectl version --client --output=yaml
+
+kind create cluster --name my-kind-cluster
+
+
+```
+
+### Install aws cli
+```
+sudo yum remove awscli
+unzip awscliv2.zip
+sudo ./aws/install
+mv /usr/local/bin/aws /usr/bin
+aws --version
+aws configure
+    AWS Access Key ID [None]: 
+    AWS Secret Access Key [None]: 
+    Default region name [None]: eu-central-1
+
+```
+
+
+
+
+
+
+
+
+
+
 
 ### Add additional volume
 1. Turn machine off
@@ -57,25 +117,4 @@ vi /etc/fstab
     /dev/sdb1 /data ext4 defaults 1 2
 umount /data
 mount -a
-
-
-```
-
-### CMD Setup
-```
-sudo yum check-update
-sudo yum update -y
-sudo reboot
-```
-
-### User management
-```
-sudo useradd -m -G technical_users docker
-sudo passwd docker
-chown docker:technical_users /data/
-
-visudo
-    peter    ALL=(ALL)       ALL
-
-
 ```
