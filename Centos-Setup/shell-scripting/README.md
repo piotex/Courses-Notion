@@ -119,4 +119,13 @@ esac
 
 ```
 
+### catch result of previous comand -> $?
+```
+#!/bin/bash
+ping -c1 8.8.8.8
+if [ $? -eq 0 ]
+then 
+        echo "connected"
+fi
+```
 
