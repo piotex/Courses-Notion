@@ -40,7 +40,11 @@ ethtool enp0s3
 
 ### NIC Bonding Procedure - for redundancy (in case if one network addapred dies) and higher spead (1G + 1G = 2G)
 ```
-
+modprobe bonding modinfo bonding Create /etc/sysconfig/network-scripts/ifcfg-bond0 Edit /etc/sysconfig/network-scripts/ethernetl Edit /etc/sysconfig/network-scripts/ethernet2 
+nicl 
+nic2 
+D 
+D 
 ```
 
 
