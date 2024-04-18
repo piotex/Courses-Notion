@@ -119,4 +119,39 @@ esac
 
 ```
 
+### catch result of previous comand -> '$?'
+```
+#!/bin/bash
+ping -c1 8.8.8.8
+if [ $? -eq 0 ]
+then 
+        echo "connected"
+fi
+```
+```
+#!/bin/bash
+hosts='8.8.8.8'
+ping -c1 $hosts &> /dev/null
+if [ $? -eq 0 ]
+then 
+        echo "$hosts is available"
+fi
+```
+```
+vi /home/peter/hosts.txt
+        8.8.8.8
+        0.0.0.0
+
+
+#!/bin/bash
+hosts="/home/peter/hosts.txt"
+for ip in $(cat $hosts)
+do 
+        ping -c1 $ip &> /dev/null
+        if [ $? -eq 0 ]
+        then 
+                echo "$ip is available"
+        fi
+done
+```
 
