@@ -58,8 +58,6 @@ mv  /usr/local/bin/kubectl  /usr/bin
 kubectl version --client --output=yaml
 
 kind create cluster --name my-kind-cluster
-
-
 ```
 
 ### Install aws cli
