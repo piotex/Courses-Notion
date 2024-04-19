@@ -15,7 +15,7 @@ kubectl get deployment -o wide
 kubectl get pods -o wide
 kubectl logs web-deployment-v1-86f768cfb6-5gt4k
 
-
+kubectl delete deployment web-deployment-v2
 ```
 
 ### basic deployment
