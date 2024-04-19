@@ -1,3 +1,12 @@
 # download-from-internet
 
-### downl
+### download file
+```
+wget url
+curl -o url
+```
+
+### print resource to console
+```
+curl url
+```
