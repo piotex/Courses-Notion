@@ -54,11 +54,29 @@ sudo mv ./kind /usr/bin
 
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-mv  /usr/local/bin/kubectl  /usr/bin
+sudo mv  /usr/local/bin/kubectl  /usr/bin
 kubectl version --client --output=yaml
 
-kind create cluster --name my-kind-cluster
+sudo kind create cluster --name my-kind-cluster
 ```
+
+### Install helm
+```
+curl -o helm-v3.10.3-linux-amd64.tar.gz https://get.helm.sh/helm-v3.10.3-linux-amd64.tar.gz
+chmod 777 helm-v3.10.3-linux-amd64.tar.gz
+tar -zxvf helm-v3.10.3-linux-amd64.tar.gz
+sudo mv linux-amd64/helm /usr/local/bin/helm
+ll /usr/local/bin/helm
+mv /usr/local/bin/helm /usr/bin
+```
+
+
+
+
+
+
+
+
 
 ### Install aws cli
 ```
@@ -73,23 +91,6 @@ aws configure
     Default region name [None]: eu-central-1
 
 ```
-
-### Install helm
-```
-curl -o helm-v3.10.3-linux-amd64.tar.gz https://get.helm.sh/helm-v3.10.3-linux-amd64.tar.gz
-chmod 777 helm-v3.10.3-linux-amd64.tar.gz
-tar -zxvf helm-v3.10.3-linux-amd64.tar.gz
-
-
-
-```
-
-
-
-
-
-
-
 
 
 ### Add additional volume
