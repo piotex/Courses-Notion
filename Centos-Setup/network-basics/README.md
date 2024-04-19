@@ -51,7 +51,36 @@ nicl ---------> bond0
 nic2 -----^
 ```
 
+### network configuration with tools
+//Bond & Team - redundancy <br>
+// 
+``` 
+nmcli                   -> clinmtui
+nmtui                   -> console tool to manage network (interactive mode)
+nm-connection-editor    -> works only on gui.... no console
+```
 
+### set static ip
+```
+nmcli device
+ping 10.10.10.10                                            -> should not be pingable
+nmcli connection modify enp0s3 ipv4.addresses 10.10.10.10
+nmcli connection modify enp0s3 ipv4.gateway 10.10.10.1/24
+nmcli connection modify enp0s3 ipv4.method manual
+nmcli connection modify enp0s3 ipv4.dns 8.8.8.8
+nmcli connection down enp0s3 
+nmcli connection up enp0s3 
+ip address show enp0s3
+```
 
-
+### add new static ip
+```
+nmcli device status
+nmcli connection show -active
+ping 10.10.10.11                                            -> should not be pingable
+nmcli connection modify enp0s3 +ipv4.addresses 10.10.10.11/24
+nmcli connection reload 
+systemctl reboot
+ip address show 
+```
 
