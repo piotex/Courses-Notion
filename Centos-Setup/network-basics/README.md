@@ -84,3 +84,19 @@ systemctl reboot
 ip address show 
 ```
 
+### Bridged
+```
+laptop--------internet
+         |
+host-----|
+```
+
+### Host-only
+```
+laptop----------internet
+
+laptop---|
+         |
+host-----|
+```
+
