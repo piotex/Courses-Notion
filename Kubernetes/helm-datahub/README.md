@@ -31,10 +31,27 @@ get service -o wide --all-namespaces
 helm history nsm -n nginx-mesh
 
 
+helm search repo datahub
+helm show values datahub/datahub
 ```
 
 
 
+```
+helm repo add jenkins https://charts.jenkins.io
+helm repo update
+
+helm search repo jenkins
+helm upgrade --install myjenkins jenkins/jenkins
+kubectl exec --namespace default -it svc/myjenkins -c jenkins -- /bin/cat /run/secrets/chart-admin-password && echo
+kubectl --namespace default port-forward svc/myjenkins 8080:8080
+kubectl describe pod myjenkins
+helm show values jenkins/jenkins
+```
+
+
+
+helm install jenkins jenkins/jenkins --version 2.200.3
 
 
 
@@ -46,5 +63,24 @@ helm repo add datahub https://helm.datahubproject.io
 helm repo update
 helm search repo datahub -l
 
+
+```
+
+```
+
+kubectl apply -f https://k8s.io/examples/service/load-balancer-example.yaml
+kubectl get deployments hello-world
+kubectl expose deployment hello-world --type=LoadBalancer --name=my-service --port=9090
+kubectl get services my-service
+kubectl describe services my-service
+
+kubectl get pods --output=wide
+kubectl describe services my-service
+kubectl describe services my-service | grep Load
+kubectl describe deployments hello-world
+kubectl get replicasets
+
+kubectl delete services my-service
+kubectl delete deployment hello-world
 
 ```
