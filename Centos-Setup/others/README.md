@@ -204,6 +204,9 @@ history
 !406
 ```
 
-
+### set actual date
+```
+sudo date -s $(curl -s "http://worldtimeapi.org/api/timezone/Europe/Warsaw" | grep -oE '"datetime":"[^"]+"' | cut -d'"' -f4)
+```
 
 
