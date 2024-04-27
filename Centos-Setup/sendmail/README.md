@@ -8,3 +8,4 @@ systemctl restart sendmail
 
 mail -s "subject line" email@mydomain.com
 ```
+
