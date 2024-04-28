@@ -8,7 +8,7 @@
 ```
 sudo yum install httpd -y 
 systemctl restart httpd
-
+systemctl stop firewalld
 ```
 
 
