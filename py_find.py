@@ -16,11 +16,11 @@ class bcolors:
 
 def main(text_to_find: str):
     banned_folders = [".git", ".idea"]
+    banned_files = ["pdf"]
     root_patch = r"."
     my_folders = [os.path.join(root_patch, x) for x in os.listdir(root_patch) if x not in banned_folders and os.path.isdir(os.path.join(root_patch, x))]
 
     i = 0
-
     while i < len(my_folders):
         tmp_folder = my_folders[i]
         tmp_inside_folders = [os.path.join(tmp_folder, x) for x in os.listdir(tmp_folder) if x not in banned_folders and os.path.isdir(os.path.join(tmp_folder, x))]
@@ -29,12 +29,10 @@ def main(text_to_find: str):
 
     my_files = []
     for tmp_folder in my_folders:
-        tmp_inside_files = [os.path.join(tmp_folder, x) for x in os.listdir(tmp_folder) if x not in banned_folders and os.path.isfile(os.path.join(tmp_folder, x))]
+        tmp_inside_files = [os.path.join(tmp_folder, x) for x in os.listdir(tmp_folder) if x not in banned_folders and os.path.isfile(os.path.join(tmp_folder, x)) and x.split('.')[-1] not in banned_files]
         my_files += tmp_inside_files
 
-
     case_sensitive = False
-
     for tmp_file in my_files:
         with open(tmp_file, 'r') as file:
             tmp_lines = file.readlines()
@@ -45,7 +43,7 @@ def main(text_to_find: str):
 
                 if text_to_find in line:
                     splited_text = line.split(text_to_find)
-                    print(f"{bcolors.HEADER+str(i)+bcolors.ENDC}   {tmp_file[2:]}")
+                    print(f"{bcolors.HEADER+str(i+1)+bcolors.ENDC}   {tmp_file[2:]}")
                     print(f"     {splited_text[0]}{bcolors.WARNING+text_to_find+bcolors.ENDC}{splited_text[1]}")
 
 
