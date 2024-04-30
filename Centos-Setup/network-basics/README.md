@@ -111,6 +111,9 @@ ps -ef | grep sshd
 ps -aux | grep sshd
 
 ssh peter@192.168.56.59
+
+sudo vi /etc/ssh/sshd_config
+    AllowUsers ...
 ```
 
 ### DNS - Domain Name System
