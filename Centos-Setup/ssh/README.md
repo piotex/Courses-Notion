@@ -16,7 +16,9 @@ sudo firewall-cmd --reload
 
 ### MASTER
 ```
-ssh-keygen -t rsa -b 2048 -C "jenkins_agent@192.168.56.57"
-    /home/peter/.ssh/id_rsa-jenkins_agent@192.168.56.57
-ssh-copy-id -i /home/peter/.ssh/id_rsa-jenkins_agent@192.168.56.57 jenkins_agent@192.168.56.57
+ssh-keygen -t rsa -b 2048 -C "jenkins_agent@192.168.56.59"
+    /home/peter/.ssh/id_rsa-jenkins_agent@192.168.56.59
+ssh-copy-id -i /home/peter/.ssh/id_rsa-jenkins_agent@192.168.56.59 jenkins_agent@192.168.56.59
+
+ssh jenkins_agent@192.168.56.59
 ```
