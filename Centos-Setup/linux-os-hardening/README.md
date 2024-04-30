@@ -23,4 +23,15 @@ systemctl -a
 ```
 netstat -tunlp          -> view active ports !!!
 ```
+```
+sudo firewall-cmd --zone=public --add-port=9002/tcp --permanent
+sudo vi /etc/firewalld/firewalld.conf
+
+sudo iptables ...
+```
+### SELinux - changes of deep settings like processes
+```
+sestatus
+```
+
 
