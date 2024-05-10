@@ -2,5 +2,6 @@
 
 ```
 yum install podman -y
+podman -v
 ```
 
