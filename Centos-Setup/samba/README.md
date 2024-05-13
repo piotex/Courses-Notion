@@ -63,3 +63,36 @@ df -h
 cd /mnt/samba_sahred && ls -la
 ```
 
+
+
+
+### secured samba:
+```
+Create a group smbgrp & user larry to access the samba server with proper
+authentication
+# useradd larry
+# groupadd smbgrp
+# usermod -a -G smbgrp larry
+# smbpasswd -a larry
+New SMB password: YOUR SAMBA PASS
+Retype new SMB password: REPEAT YOUR SAMBA PASS
+Added user larry
+• Create a new share, set the permission on the share:
+# mkdir /samba/securepretzels
+# chown -R larry:smbgrp /samba/securepretzels
+# chmod -R 0770 /samba/securepretzels
+# chcon -t samba_share_t /samba/securepretzels
+• Edit the configuration file /etc/samba/smb.conf (Create a backup copy first)
+# vi /etc/samba/smb.conf
+Add the following lines
+[Secure]
+path = /samba/securepretzels
+valid users = @smbgrp
+guest ok = no
+writable = yes
+browsable = yes
+• Restart the services
+# systemctl restart smb
+# systemctl restart nmb
+
+```
