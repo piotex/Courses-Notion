@@ -168,6 +168,12 @@ nslookup 192.168.1.241
 
 ```
 
+### List open ports
+```
+sudo netstat -atnp | grep LISTEN        // list open ports
+```
+
+
 ### NTP - network time protocol
 ```
 /etc/ntp.conf
