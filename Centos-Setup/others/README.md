@@ -209,4 +209,13 @@ history
 sudo date -s $(curl -s "http://worldtimeapi.org/api/timezone/Europe/Warsaw" | grep -oE '"datetime":"[^"]+"' | cut -d'"' -f4)
 ```
 
-
+### list all installed packages
+```
+rpm-qa                  # CentOS
+apt list -installed     # Ubuntu
+```
+### Remove packages
+```
+rpm -e package_name
+apt-get remove package_name
+```

@@ -17,6 +17,7 @@ class bcolors:
 def main(text_to_find: str):
     banned_folders = [".git", ".idea"]
     banned_files = ["pdf"]
+    supported_files = ["md"]
     root_patch = r"."
     my_folders = [os.path.join(root_patch, x) for x in os.listdir(root_patch) if x not in banned_folders and os.path.isdir(os.path.join(root_patch, x))]
 
@@ -29,12 +30,12 @@ def main(text_to_find: str):
 
     my_files = []
     for tmp_folder in my_folders:
-        tmp_inside_files = [os.path.join(tmp_folder, x) for x in os.listdir(tmp_folder) if x not in banned_folders and os.path.isfile(os.path.join(tmp_folder, x)) and x.split('.')[-1] not in banned_files]
+        tmp_inside_files = [os.path.join(tmp_folder, x) for x in os.listdir(tmp_folder) if x not in banned_folders and os.path.isfile(os.path.join(tmp_folder, x)) and x.split('.')[-1] in supported_files]
         my_files += tmp_inside_files
 
     case_sensitive = False
     for tmp_file in my_files:
-        with open(tmp_file, 'r') as file:
+        with open(tmp_file, 'r', encoding='utf8') as file:
             tmp_lines = file.readlines()
             for i, line in enumerate(tmp_lines):
                 if not case_sensitive:
