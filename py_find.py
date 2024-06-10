@@ -15,7 +15,7 @@ class bcolors:
 
 
 def main(text_to_find: str):
-    banned_folders = [".git", ".idea"]
+    banned_folders = [".git", ".idea", ".archiv"]
     banned_files = ["pdf"]
     supported_files = ["md"]
     root_patch = r"."
@@ -49,6 +49,7 @@ def main(text_to_find: str):
 
 
 if __name__ == "__main__":
+    os.system('clear')
     input_str = input("Text to find: ")
     main(input_str)
 
