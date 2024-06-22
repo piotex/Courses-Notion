@@ -130,6 +130,12 @@ Service
 - like load-balancer
 - types of service:
    - LoadBalancer
-   - ClusterIP
-   - Nodeport
+   - ClusterIP - is accessible only inside cluster
+   - Nodeport - by combining node IP address and nodeport port numer we can access pod
+```
+
+Declarative vs Imperative
+```
+Declarative - create manifest file and run kubectl apply                         - good - Infra as Code
+Imperative  - run manually all kubectl comands to get same result as Declarative - not good
 ```
